@@ -1,0 +1,560 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+}
+.bodu{
+    background: black;
+}
+html{
+    scroll-behavior: smooth;
+}
+.web {
+    width: 1200px;
+    margin: 0 auto;
+    background: rgb(0,0,0);
+    background: radial-gradient(circle, rgba(0,0,0,0.6222086246608018) 0%, rgba(11,11,18,1) 100%);
+    background-image: url(../img/Fondo.png);
+    background-size: contain;
+    background-position: fixed;
+    padding: 20px;
+}
+#video-container{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh; 
+    overflow: hidden;
+    z-index: 1000;
+}
+#intro-video{
+    object-fit: cover; /* Hace que el video cubra toda la pantalla */
+    width: 100%;
+    height: 100%;
+}
+.contenido{
+
+    width: 860px;
+    right: 0;
+    padding: 20px;
+    position: relative;
+    left: 340px;
+}
+
+.menu {
+    width: 340px;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+}
+
+#logo_btn {
+    width: 100%;
+    height: 100px;
+    background-color: transparent;
+    background-image: url(../img/Logo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-style: none;
+}
+
+.img_menu {
+    width: 480px;
+    height: 480px;
+    background-image: url(../img/img_menu.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
+    top: 10px;
+    right: 280px;
+}
+
+.img_home_1 {
+    width: 70%;
+    height: 300px;
+    background-image: url(../img/img_home1.jpg);
+    background-size: cover;
+    margin: 0 auto;
+}
+
+.caja_txt_home {
+    display: flex;
+    margin-top: 20px;
+    align-items: center;
+}
+
+.txt_home_1 {
+    width: 50%;
+    text-align: center;
+    color: white;
+}
+
+.img_home_2 {
+    width: 230px;
+    height: 230px;
+    margin-left: 50px;
+    background-image: url(../img/logo_juego.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+#btn_trailer, #btn_tematica, #btn_galeria, #btn_videojuego, #btn_revista, #btn_contacto {
+    width: 80px;
+    height: 30px;
+    border-radius: 20px;
+    position: absolute;
+    color: white;
+    transition: all 0.3s ease;
+    background: rgb(255,67,50);
+    background: -moz-radial-gradient(circle, rgba(255,67,50,1) 0%, rgba(136,0,0,1) 100%);
+    background: -webkit-radial-gradient(circle, rgba(255,67,50,1) 0%, rgba(136,0,0,1) 100%);
+    background: radial-gradient(circle, rgba(255,67,50,1) 0%, rgba(136,0,0,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff4332",endColorstr="#880000",GradientType=1);
+    border-style: none;
+    font-size: 17px;
+}
+
+#btn_trailer:hover, #btn_tematica:hover, #btn_galeria:hover, #btn_videojuego:hover, #btn_revista:hover, #btn_contacto:hover {
+    width: 150px;
+    height: 40px;
+    border-radius: 20px;
+    font-size: 25px;
+    background: -moz-radial-gradient(circle, rgba(214,58,44,1) 0%, rgba(112,0,0,1) 100%);
+    background: -webkit-radial-gradient(circle, rgba(214,58,44,1) 0%, rgba(112,0,0,1) 100%);
+    background: radial-gradient(circle, rgba(214,58,44,1) 0%, rgba(112,0,0,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#d63a2c",endColorstr="#700000",GradientType=1);
+    z-index: 50;
+}
+
+#btn_trailer {
+    top: 60px;
+    left: 450px;
+}
+
+#btn_tematica {
+    top: 130px;
+    left: 490px;
+}
+
+#btn_galeria {
+    top: 200px;
+    left: 510px;
+}
+
+#btn_videojuego {
+    top: 270px;
+    left: 510px;
+}
+
+#btn_revista {
+    top: 340px;
+    left: 490px;
+}
+
+#btn_contacto {
+    top: 410px;
+    left: 450px;
+}
+.menu_container { 
+    position: relative; 
+    display: inline-block; 
+    bottom: 15px;
+}
+.submenu_videojuego {
+    position: absolute;
+    top: 300px;
+    left: 550px;
+    padding: 10px;
+    border-radius: 10px;
+    z-index: 10;
+    width: 150px;
+    visibility: hidden; 
+    opacity: 0; 
+    transition: opacity 0.3s ease, visibility 0s 0.3s;
+}
+
+.menu_container:hover .submenu_videojuego { 
+    visibility: visible; 
+    opacity: 1; 
+}
+
+#btn_niveles, #btn_objetivo, #btn_personajes {
+    width: 80px;
+    height: 30px;
+    background: rgb(255,67,50);
+    background: -moz-radial-gradient(circle, rgba(255,67,50,1) 0%, rgba(136,0,0,1) 100%);
+    background: -webkit-radial-gradient(circle, rgba(255,67,50,1) 0%, rgba(136,0,0,1) 100%);
+    background: radial-gradient(circle, rgba(255,67,50,1) 0%, rgba(136,0,0,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff4332",endColorstr="#880000",GradientType=1);
+    border-radius: 15px;
+    border-style: none;
+    margin-top: 10px;
+    color: white;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+#btn_niveles:hover, #btn_objetivo:hover, #btn_personajes:hover {
+    width: 150px;
+    height: 40px;
+    background: -moz-radial-gradient(circle, rgba(214,58,44,1) 0%, rgba(112,0,0,1) 100%);
+    background: -webkit-radial-gradient(circle, rgba(214,58,44,1) 0%, rgba(112,0,0,1) 100%);
+    background: radial-gradient(circle, rgba(214,58,44,1) 0%, rgba(112,0,0,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#d63a2c",endColorstr="#700000",GradientType=1);
+    font-size: 16px;
+}
+
+#trailer {
+    margin-top: 50px;
+}
+
+.video_trailer {
+    width: 90%;
+    height: 400px;
+    margin: 0 auto;
+    background-image: url(../img/trailer_1.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.cont_trailer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+}
+
+.img_trailer {
+    width: 50px;
+    height: 50px;
+    background-image: url(../img/icono_video.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-right: 20px;
+}
+
+.txt_trailer {
+    color: #FFDF07;
+    font-size: x-large;
+}
+
+#tematica {
+    margin-right: 40px;
+}
+
+.cont_tematica {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img_tematica1 {
+    width: 50%;
+    height: 220px;
+    background-image: url(../img/img_tematica1.jpg);
+    margin-right: 20px;
+}
+
+.img_tematica2 {
+    width: 50%;
+    height: 220px;
+    background-image: url(../img/img_tematica2.jpg);
+    margin-left: 20px;
+}
+
+.txt_tematica1 {
+    width: 50%;
+    color: white;
+    text-align: center;
+}
+
+.txt_tematica2 {
+    width: 50%;
+    color: white;
+    text-align: center;
+}
+
+#galeria {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+.img_galeria {
+    width: 380px;
+    height: 200px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-top: 20px;
+}
+
+.img_galeria1 {
+    background-image: url(../img/galeria_1.png);
+    margin-right: 40px;
+    margin-top: 40px;
+}
+
+.img_galeria2 {
+    background-image: url(../img/galeria_2.png);
+    margin-top: 40px;
+}
+
+.img_galeria3 {
+    background-image: url(../img/galeria_3.png);
+    margin-right: 40px;
+}
+
+.img_galeria4 {
+    background-image: url(../img/galeria_4.png);
+}
+
+.img_galeria5 {
+    background-image: url(../img/galeria_5.png);
+    margin-right: 40px;
+}
+
+.img_galeria6 {
+    background-image: url(../img/galeria_6.png);
+}
+.cont_videojuego1{
+    display: flex;
+    margin-top: 60px;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+}
+.img_videojuego1{
+    width: 60%;
+    height: 300px;
+    background-image: url(../img/videojuego_1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-right: 20px;
+}
+.txt_videojuego1{
+    width: 40%;
+    color: white;
+    text-align: center;
+    margin-right: 20px;
+}
+.cont_videojuego2{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+}
+.img_videojuego2{
+    width: 200px;
+    height: 200px;
+    background-image: url(../img/icono_lugar.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.img_videojuego3{
+    width: 200px;
+    height: 200px;
+    background-image: url(../img/icono_objetivo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.img_videojuego4{
+    width: 200px;
+    height: 200px;
+    background-image: url(../img/icono_personaje.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.txt_videojuego2, .txt_videojuego3, .txt_videojuego4{
+    text-align: center;
+    margin-top: 20px;
+    background: white;
+    border-radius: 40px;
+    padding: 10px;
+}
+.img_objetivo{
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 700px;
+    height: 400px;
+    background-image: url(../img/objetivo_1.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.txt_objetivo1, .txt_niveles1, h1, .txt_personajes1{
+    color: #FFDF07;
+    font-size: xx-large;
+    margin-top: 40px;
+    text-align: center;
+}
+.txt_objetivo2{
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 700px;
+    color: white;
+    text-align: center;
+}
+.cont_niveles1, .cont_niveles2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+    margin-right: 40px;
+}
+.txt_niveles2, .txt_niveles3{
+    color: white;
+    width: 80%;
+    margin-right: 20px;
+}
+.img_niveles1{
+    width: 500px;
+    height: 200px;
+    background-image: url(../img/niveles_1.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.img_niveles2{
+    width: 500px;
+    height: 200px;
+    background-image: url(../img/niveles_2.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.cont_personajes1{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-right: 40px;
+}
+.txt_personajes2, .txt_personajes3, .txt_personajes4, .txt_personajes5, .txt_personajes6, .txt_personajes7 {
+    color: white;
+    text-align: center;
+    width: 100%;
+    margin-top: 40px;
+}
+
+.img_personajes1{
+    width: 200px;
+    height: 300px;
+    background-image: url(../img/personajes_1.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: 20px;
+    z-index: 2;
+}
+.cont_personajes2{
+    display: flex;
+    gap: 40px;
+}
+.cont_personajes3, .cont_personajes4{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-right: 40px;
+}
+.img_personajes2{
+    width: 200px;
+    height: 300px;
+    background-image: url(../img/personajes_2.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: 20px;
+    background-position: center;
+    z-index: 2;
+}
+.img_personajes3{
+    width: 200px;
+    height: 300px;
+    background-image: url(../img/personajes_3.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: 20px;
+    background-position: center;
+    z-index: 2;
+}
+.cont_revista1{
+    position: relative; 
+    display: inline-block;
+    margin-top: 40px;
+}
+.img_revista1{
+    width: 700px;
+    height: 500px;
+    background-image: url(../img/revista_1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.img_revista1:after{
+    content: ""; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.727); 
+    z-index: 1;
+}
+.txt_revista1{
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    color: white; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    text-align: center;
+    z-index: 2;
+}
+.cont_revista2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+}
+.img_revista2{
+    width: 50px;
+    height: 50px;
+    background-image: url(../img/icono_video.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-right: 20px;
+}
+.txt_revista2{
+    color: #FFDF07;
+    font-size: x-large;
+}
+
+.img_contacto1{
+    width: 700px;
+    height: 500px;
+    background-image: url(../img/contacto_1.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.img_contacto2{
+    width: 700px;
+    height: 200px;
+    background-image: url(../img/contacto_2.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.txt_contacto1{
+    text-align: center;
+    width: 100%;
+    color: white;
+}
+.img_contacto1, .img_galeria, .img_galeria1, .img_galeria2, .img_galeria3, .img_galeria4, .img_galeria5, .img_galeria6, .img_home_1, .img_home_2, .img_niveles1, .img_niveles2, .img_objetivo, .img_personajes1, .img_personajes2, .img_personajes3, .img_revista1, .img_revista2, .img_tematica1, .img_tematica2, .img_trailer, .img_videojuego1, .img_videojuego2, .img_videojuego3, .img_videojuego4 {
+    transition: transform 0.4s ease;
+}
+
+.img_contacto1:hover, .img_galeria:hover, .img_galeria1:hover, .img_galeria2:hover, .img_galeria3:hover, .img_galeria4:hover, .img_galeria5:hover, .img_galeria6:hover, .img_home_1:hover, .img_home_2:hover, .img_niveles1:hover, .img_niveles2:hover, .img_objetivo:hover, .img_personajes1:hover, .img_personajes2:hover, .img_personajes3:hover, .img_revista1:hover, .img_revista2:hover, .img_tematica1:hover, .img_tematica2:hover, .img_trailer:hover, .img_videojuego1:hover, .img_videojuego2:hover, .img_videojuego3:hover, .img_videojuego4:hover{
+    transform: scale(1.2); 
+    transition: transform 0.4s ease;
+    z-index: 500;
+}
